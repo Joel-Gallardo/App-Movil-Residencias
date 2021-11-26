@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">App Gobierna Ciudadano</string>
+    <string name="prefs_file">com.example.demo_gobierna_ciudadano.PREFERENCE_FILE_KEY</string>
+    <string name="title_activity_mapa">Map</string>
+</resources>

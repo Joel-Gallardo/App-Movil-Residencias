@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:textAlignment="center"
+    tools:context=".HomeActivity">
+
+    <ImageView
+        android:id="@+id/TitletextView"
+        android:layout_width="match_parent"
+        android:layout_height="135dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:src="@drawable/logogobiernaciudadano"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/nombreUsuarioTextView"
+        android:layout_width="226dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="sans-serif-black"
+        android:gravity="center"
+        android:textColor="@color/purple_700"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/msjSeleccionaTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TitletextView" />
+
+    <TextView
+        android:id="@+id/msjSeleccionaTextView"
+        android:layout_width="match_parent"
+        android:layout_height="43dp"
+        android:layout_marginStart="90dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginEnd="70dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Seleccióna el Servicio a Reportar"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        app:layout_constraintBottom_toTopOf="@+id/btnVialidadYCalle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TitletextView"
+        android:fontFamily="sans-serif-black"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:textColor="@color/purple_700" />
+
+    <ImageButton
+        android:id="@+id/btnAlumbrado"
+        style="@android:style/Widget.ImageButton"
+        android:layout_width="158dp"
+        android:layout_height="160dp"
+        android:layout_marginStart="34dp"
+        android:layout_marginTop="130dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TitletextView"
+        app:srcCompat="@drawable/alumbrado" />
+
+    <ImageButton
+        android:id="@+id/btnVialidadYCalle"
+        style="@android:style/Widget.ImageButton"
+        android:layout_width="158dp"
+        android:layout_height="160dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="130dp"
+        android:layout_marginEnd="34dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnAlumbrado"
+        app:layout_constraintTop_toBottomOf="@+id/TitletextView"
+        app:srcCompat="@drawable/vialidadycalles" />
+
+    <ImageButton
+        android:id="@+id/btnAguaYDrenaje"
+        style="@android:style/Widget.ImageButton"
+        android:layout_width="158dp"
+        android:layout_height="160dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnAlumbrado"
+        android:src="@drawable/aguaydrenaje"/>
+
+    <ImageButton
+        android:id="@+id/btnAseoYLimpieza"
+        style="@android:style/Widget.ImageButton"
+        android:layout_width="158dp"
+        android:layout_height="160dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="34dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnAguaYDrenaje"
+        app:layout_constraintTop_toBottomOf="@+id/btnVialidadYCalle"
+        app:srcCompat="@drawable/aseoylimpieza" />
+
+    <Button
+        android:id="@+id/logOutButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cerrar Sesion"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnAguaYDrenaje" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
