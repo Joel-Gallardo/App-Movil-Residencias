@@ -30,6 +30,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAlignment="center"
+            android:textColor="@color/red"
+            android:textSize="20sp"
+            android:textStyle="bold"
             android:textAppearance="@style/TextAppearance.AppCompat.Title" />
 
         <Space
@@ -40,8 +43,11 @@
             android:id="@+id/tipoReporteSubmenuTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="🔻 Selecciona el Tipo de Problema"
+            android:text="◼ Selecciona el tipo de problema:"
             android:textAlignment="textStart"
+            android:textStyle="bold"
+            android:textColor="@color/red"
+            android:textSize="20sp"
             android:textAppearance="@style/TextAppearance.AppCompat.Menu" />
 
         <Space
@@ -60,14 +66,24 @@
             android:layout_width="match_parent"
             android:layout_height="50dp" />
 
+        <TextView
+            android:id="@+id/descripcionTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="◼ Añade una descripcion de la falla:"
+            android:textAlignment="textStart"
+            android:textColor="@color/red"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Menu" />
+
         <EditText
             android:id="@+id/descripcionEditText"
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:ems="10"
             android:hint="💬Descripción de la falla"
-            android:inputType="textMultiLine"
-            android:textColorHint="@color/black" />
+            android:inputType="textMultiLine" />
 
         <Space
             android:layout_width="match_parent"
@@ -79,10 +95,11 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
             android:layout_marginBottom="30dp"
-            android:gravity="center"
+            android:textColor="@color/red"
             android:textStyle="bold"
             android:textSize="20dp"
-            android:text="Ubicacion de la falla:" />
+            android:textAppearance="@style/TextAppearance.AppCompat.Menu"
+            android:text="◼ Añade la ubicacion de la falla:" />
 
         <TextView
             android:id="@+id/instruc"
@@ -100,7 +117,7 @@
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
             android:gravity="center"
-            android:text=" 1️⃣ - Presiona el botón para detectar automáticamente la ubicación" />
+            android:text="1 - Presiona el botón para detectar automáticamente la ubicación" />
 
         <TextView
             android:id="@+id/lbllongitud"
@@ -109,7 +126,7 @@
             android:layout_marginTop="10dp"
             android:layout_marginBottom="30dp"
             android:gravity="center"
-            android:text=" 2️⃣ - Comprueba la ubicación visualizándola en el mapa" />
+            android:text="2 - Comprueba la ubicación visualizándola en el mapa" />
 
         <TextView
             android:id="@+id/msgexito"
@@ -139,6 +156,57 @@
             android:ems="13"
             android:text="Ver en el mapa la ubicacion"
             android:visibility="gone" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="50dp" />
+
+        <TextView
+            android:id="@+id/imgtitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="sans-serif-black"
+            android:textColor="@color/red"
+            android:textSize="20sp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Menu"
+            android:text="◼ Añade una imagen de la falla:" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/imgTomada"
+            android:layout_width="220dp"
+            android:layout_height="220dp"
+            android:layout_gravity="center"
+            android:src="@drawable/picture" />
+
+
+
+        <TextView
+            android:id="@+id/imgDescrip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="sans-serif-black"
+            android:gravity="center"
+            android:textSize="17sp"
+            android:text="La imagen ayudara a identificar mejor la falla" />
+
+        <Button
+            android:id="@+id/btnTakePhoto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="20dp"
+            android:ems="13"
+            android:text="tomar foto"
+            />
+
 
         <Space
             android:layout_width="match_parent"

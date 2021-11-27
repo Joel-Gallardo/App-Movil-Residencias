@@ -5,11 +5,13 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.graphics.Bitmap
 import android.location.Location
 import android.location.LocationManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Looper
+import android.provider.MediaStore
 import android.provider.Settings
 import android.view.View
 import android.widget.AdapterView
@@ -29,6 +31,9 @@ class LlenarReporteActivity : AppCompatActivity() {
     companion object {
         private val REQUIRED_PERMISSIONS_GPS= arrayOf(Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_FINE_LOCATION)
     }
+
+    //variable request code para tomar foto
+    val REQUEST_IMAGE_CAPTURE = 1
 
     //instanciar bd firebaseFirestore
     private val db = FirebaseFirestore.getInstance()
@@ -74,6 +79,33 @@ class LlenarReporteActivity : AppCompatActivity() {
             startActivity(act)
         }
 
+        //Funcion para tomar foto
+        setupListener()
+
+    }
+
+    //evento del btn Tomar Foto
+    private fun setupListener() {
+        binding.btnTakePhoto.setOnClickListener { dispatchTakePictureIntent() }
+    }
+
+
+    private fun dispatchTakePictureIntent() {
+        Intent(MediaStore.ACTION_IMAGE_CAPTURE).also { takePictureIntent ->
+            takePictureIntent.resolveActivity(packageManager)?.also {
+                startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE)
+            }
+        }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
+            data?.extras?.let { bundle ->
+                val imageBitmap = bundle.get("data") as Bitmap
+                binding.imgTomada.setImageBitmap(imageBitmap)
+            }
+        }
     }
 
     //detectar ubicacion
@@ -146,7 +178,7 @@ class LlenarReporteActivity : AppCompatActivity() {
     private fun setup(tipoDeReporte: String, email: String, provider: String) {
 
         //pintar en la iu el tipo de reporte que se selecciono en home
-        binding.tipoDeReporteTextView.text = "⚠ Llena tu Reporte de $tipoDeReporte"
+        binding.tipoDeReporteTextView.text = "Llena tu reporte de $tipoDeReporte"
 
         //variable para almacenar el tipo de reporte
         lateinit var tipo: String
